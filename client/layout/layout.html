@@ -1,0 +1,13 @@
+<template name="layout">
+  <div class="content">
+    <div class="container-wrapper">
+      {{> offcanvas}}
+      <div class="container-inner">
+        {{> header}}
+        {{> yield}}
+        {{> footer}}
+      </div>
+    </div>
+  </div>
+  {{> postModal}}
+</template>

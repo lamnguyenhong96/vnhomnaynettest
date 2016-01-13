@@ -1,0 +1,108 @@
+/**
+ * Profile
+ */
+
+.profile {
+  min-width: $gutter * 18.5;
+
+  &-body {
+    padding: $gutter;
+  }
+
+  &-info {
+    position: relative;
+    margin: 0;
+    padding: {
+      left: $gutter * 3;
+      right: $gutter * 5;
+    }
+    min-height: $gutter * 2.5;
+  }
+
+  &-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    img {
+      @include border-radius(50%);
+      $h: $gutter * 2.5;
+
+      display: block;
+      height: $h;
+      width: $h;
+    }
+  }
+
+  &-username {
+    margin: ($gutter * 0.15) 0;
+    font: {
+      size: $font-base * 0.9375;
+      weight: $font-medium;
+    }
+    color: $thin-light-black;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-decoration: none;
+    overflow: hidden;
+  }
+
+  &-label {
+    span {
+      @include border-radius(4px);
+
+      display: inline-block;
+      padding: 0 ($gutter * 0.5);
+      font-size: $font-base * 0.75;
+      line-height: $gutter;
+      background-color: $thin-gray;
+      color: $light-black;
+    }
+  }
+
+  &-button {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    margin-top: -($gutter * 0.8);
+    width: $gutter * 5;
+
+    i {
+      margin-right: $gutter * 0.4;
+    }
+  }
+
+  &-column {
+    float: left;
+    padding: $gutter * 0.25;
+    width: 33.3333%;
+  }
+
+  &-social {
+    @include border-radius(4px);
+
+    margin-top: $gutter * 0.5;
+    background-color: $xxlight-gray;
+    border: 1px solid $thin-gray;
+    color: $light-blue;
+    text-align: center;
+    overflow: hidden;
+
+    span {
+      display: block;
+
+      &.number {
+        font: {
+          size: $font-base * 1.25;
+          weight: $font-bold;
+        }
+        color: $xthin-light-black;
+      }
+    }
+  }
+
+  &-badge {
+    padding: $gutter;
+    border-top: 1px solid $thin-gray;
+  }
+}

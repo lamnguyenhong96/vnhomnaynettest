@@ -1,0 +1,47 @@
+/**
+ * Slick
+ */
+
+.slick {
+  &-slider {
+    margin: 0;
+  }
+
+  &-prev,
+  &-next {
+    $h: $gutter * 5;
+
+    z-index: 4;
+    display: block;
+    height: $h;
+    margin-top: -($h / 2);
+    width: $gutter * 2.5;
+    font-size: 1.5em;
+
+    &:before {
+      display: block;
+      font: {
+        size: 2.5em;
+        family: 'FontAwesome';
+      }
+      line-height: $h;
+      text-align: center;
+    }
+  }
+
+  &-prev {
+    left: 0;
+
+    &:before {
+      content: "\f104";
+    }
+  }
+
+  &-next {
+    right: 0;
+
+    &:before {
+      content: "\f105";
+    }
+  }
+}

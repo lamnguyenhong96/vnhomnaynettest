@@ -1,0 +1,17 @@
+<template name="home">
+  {{#Animate}}
+    <div class="main animate">
+      {{> homeRegister}}
+      <div class="container">
+        <h1>Welcome {{currentUser.profile.name}} ! <img src="{{currentUser.profile.pictureUrl}}" alt=""></h1>
+        {{#if currentUser}}
+          <button class="btn btn-danger btn-logout">Logout {{currentUser.profile.name}}</button> <br>
+          <a href="{{pathFor route='reset-password'}}">Reset Password</a>
+        {{else}}
+          <a href="{{pathFor route='login'}}">Login</a> <br>
+          <a href="{{pathFor route='register'}}">Signup</a>
+        {{/if}}
+      </div>
+    </div>
+  {{/Animate}}
+</template>

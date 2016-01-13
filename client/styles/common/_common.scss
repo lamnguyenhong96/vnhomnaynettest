@@ -1,0 +1,107 @@
+/**
+ * Common
+ */
+
+body {
+  font: {
+    family: $font-family;
+    size: $font-base * 0.875;
+    weight: $font-normal;
+  }
+  line-height: 1.42857;
+  color: $light-black;
+  position: relative;
+}
+
+a {
+  color: $thin-light-black;
+  outline: none;
+  text-decoration: none;
+
+  &:hover {
+    color: $blue;
+  }
+
+  &:hover,
+  &:active,
+  &:focus {
+    outline: none;
+  }
+}
+
+a,
+button,
+input {
+  transition-duration: 0.25s;
+  transition-property: color, background-color, border-color;
+  transition-timing-function: ease-out;
+}
+
+.main {
+  padding-top: $gutter * 3;
+  opacity: 1;
+  transition: opacity 200ms;
+
+  &.animate {
+    opacity: 0;
+  }
+}
+
+.bg-gray {
+  background-color: $xxlight-gray;
+
+  &:before {  
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: -9999px;
+    height: 100%;
+    background-color: $xxlight-gray;
+    content: "";
+  }
+}
+
+/* load-more */
+.load-more {
+  text-align: center;
+  overflow: hidden;
+}
+
+/* hovercard */
+.hovercard {
+  @include border-radius(4px);
+}
+
+/* xs & sm */
+@media screen and (max-width: ($desktop - 1)){
+
+  /* load-more */
+  .load-more {
+    padding: ($gutter * 1.5) 0;
+  }
+}
+
+/* md & lg */
+@media screen and (min-width: $desktop) {
+  /* main */
+  .main {
+    &-content {
+      padding-right: $gutter * 0.75;
+    }
+
+    &-content,
+    &-sidebar {
+      padding-top: $gutter * 1.5;
+    }
+
+    &-sidebar {
+      padding-left: $gutter * 0.75;
+      position: relative;
+    }
+  }
+
+  /* load-more */
+  .load-more {
+    padding: ($gutter * 2.5) 0;
+  }
+}

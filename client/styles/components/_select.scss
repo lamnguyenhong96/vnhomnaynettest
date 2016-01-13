@@ -1,0 +1,193 @@
+/**
+ * Select
+ */
+
+.select {
+  &-custom {
+    position: relative;
+    display: inline-block;
+    font-weight: $font-medium;
+    z-index: 99;
+
+    select {
+      position: absolute;
+      left: -9999em;
+      top: 0;
+    }
+
+    &-header {
+      $h: $gutter * 1.6;
+
+      position: relative;
+      padding: {
+        left: $gutter * 0.75;
+        right: $gutter * 1.75;
+      }
+      height: $h;
+      overflow: hidden;
+      line-height: $h - 2;
+      border: {
+        style: solid;
+        width: 1px;
+      }
+      cursor: pointer;
+
+      &:after {
+        position: absolute;
+        right: $gutter * 0.75;
+        top: 0;
+        display: block;
+        font: {
+          family: 'FontAwesome';
+          size: 1.2em;
+        }
+        content: "\f0d7";
+      }
+
+      i,
+      span {
+        display: inline-block;
+      }
+
+      i {
+        margin-right: $gutter * 0.15;
+      }
+    }
+
+    &-body {
+      position: absolute;
+      top: 110%;
+      left: 50%;
+      margin-left: -($gutter * 5);
+      max-height: 0;
+      width: $gutter * 10;
+      overflow: hidden;
+      opacity: 0;
+      transition: {
+        duration: 0.25s;
+        property: max-height, opacity;
+        timing-function: ease-out;
+      }
+
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: ($gutter * 0.25) 0;
+        border: {
+          style: solid;
+          width: 1px;
+        }
+        overflow: hidden;
+        background-color: $white;
+      }
+
+      li {
+        margin: 0;
+        padding: 0;
+      }
+
+      a {
+        position: relative;
+        display: block;
+        padding:  {
+          top: $gutter * 0.25;
+          bottom: $gutter * 0.25;
+          right: $gutter * 0.5;
+          left: $gutter * 1.5;
+        }
+        color: $thin-light-black;
+
+        &:hover {
+          background-color: #e6eff7;
+          text-decoration: none;
+        }
+
+        &:before {
+          position: absolute;
+          top: $gutter * 0.25;
+          left: $gutter * 0.4;
+          display: none;
+          font: {
+            family: 'FontAwesome';
+            size: 1.2em;
+          }
+          line-height: $gutter;
+          content: "\f00c";
+        }
+
+        &.active {
+          &:before {
+            display: block;
+          }
+        }
+      }
+    }
+
+    &.rounded &-header,
+    &.rounded &-body ul {
+      @include border-radius(4px);
+    }
+
+    &.gray &-header {
+      background-color: $xlight-gray;
+      color: $thin-light-black;
+      border-color: $thin-gray;
+
+      &:after {
+        color: $dark-gray;
+      }
+
+      &:hover {
+        background-color: darken($xlight-gray, 3%);
+      }
+    }
+
+    &.gray &-body ul {
+      border-color: $thin-gray;
+    }
+
+    &.active &-body {
+      max-height: $gutter * 50;
+      opacity: 1;
+    }
+    &.active &-header:after {
+      content: "\f0d8";
+    }
+  }
+}
+
+.select2 .dropdown-wrapper {
+  display: none;
+  border: 0;
+}
+.select2-container {
+  width: 100% !important;
+}
+.select2-container--default .select2-selection--multiple {
+  border: 0 !important;
+  border-radius: 0 !important;
+}
+.select2-dropdown {
+  border-color: $white !important;
+  border-radius: 0 !important;
+}
+.select2-container--default .select2-selection--multiple .select2-selection__rendered {
+  padding: 0 $gutter !important;
+}
+.select2-results__option {
+  padding: {
+    left: $gutter !important;
+    right: $gutter !important;
+  }
+}
+.select2-dropdown.select2-dropdown--above {
+  border-left-color: $xxthin-light-black !important;
+  border-right-color: $xxthin-light-black !important;
+  border-width: 0 0 0 1px !important;
+}
+.select2-selection__choice {
+  padding: 0 ($gutter * 0.5) !important;
+}
+.select2-selection__choice__remove {
+  margin-right: ($gutter * 0.25) !important;
+}

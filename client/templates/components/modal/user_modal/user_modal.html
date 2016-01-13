@@ -1,0 +1,60 @@
+<template name="userModal">
+  <div class="modal fade modal-user" id="user" role="dialog">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-inner">
+
+          <div class="modal-user-body">
+            <div class="modal-user-info">
+              <div class="modal-user-image">
+                <img src="http://placehold.it/50x50" alt="">
+              </div>
+              <div class="modal-user-content">
+                <div class="modal-user-username">Justin Baby</div>
+                <div class="modal-user-label">
+                  <img src="img/badge.png" alt="">
+                  <span>#312</span>
+                </div>
+              </div>
+              <a href="#" class="button button-white-shadow button-normal rounded modal-user-button"><i class="fa fa-user"></i> {{i18n "follow"}}</a>
+            </div>
+            <!-- modal-user-info -->
+
+            <div class="modal-user-social">
+              <div class="row">
+                <div class="col-xs-4">
+                  <div class="modal-user-column">
+                    <span class="number">192</span>
+                    <span class="text">{{i18n "posts"}}</span>
+                  </div>
+                </div>
+                <div class="col-xs-4">
+                  <div class="modal-user-column">
+                    <span class="number">392</span>
+                    <span class="text">{{i18n "header_readerships"}}</span>
+                  </div>
+                </div>
+                <div class="col-xs-4">
+                  <div class="modal-user-column">
+                    <span class="number">76</span>
+                    <span class="text">{{i18n "header_followings"}}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- modal-user-social -->
+
+          </div>
+          <!-- modal-user-body -->
+
+          <div class="modal-user-badge">
+            
+          </div>
+          <!-- modal-user-badge -->
+
+        </div>
+        <a href="#" class="button button-only-icon button-small button-blue modal-close circle" data-dismiss="modal"><i class="fa fa-times"></i></a>
+      </div>
+    </div>
+  </div>
+</template>

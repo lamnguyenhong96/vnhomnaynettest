@@ -1,0 +1,241 @@
+/*
+* My profile
+*/
+
+.user {
+  //User content
+  &-content {
+    background-color: $xthin-light-black;
+    color: $white;
+  }
+
+  &-info {
+    padding-top: 2.1 * $gutter;
+    padding-bottom: 2 * $gutter;
+    height: 16.7 * $gutter;
+    background: url('/img/bg-myprofile.png') center top no-repeat;
+  }
+
+  &-image {
+    position: relative;
+    margin-bottom: 0.75 * $gutter;
+    text-align: center;
+
+    img{
+      @include border-radius(50%);
+
+      border: 8px #fff solid;
+      max-width: 100%;
+    }
+
+    .index-number {
+      position: absolute;
+      bottom: -(0.4 * $gutter);
+      left: 50%;
+      width: 3.2 * $gutter;
+      height: 1.4 * $gutter;
+      line-height: 1.4 * $gutter;
+      margin-left: -(1.6 * $gutter);
+      text-align: center;
+      font-weight:  $font-bold;
+    }
+  }
+
+  &-title {
+    font-size: 1.625 * $font-base;
+    font-weight:  $font-bold;
+    display: block;
+    text-align: center;
+    margin-bottom: 0.5 * $gutter;
+  }
+
+  .form-social-content {
+    text-align: center;
+    margin-bottom: $gutter;
+  }
+
+  &-level {
+    &-title {
+      font-weight: $font-bold;
+      font-size: 1.75 * $font-base;
+      line-height: 1.5 * $gutter;
+      margin-bottom: $gutter;
+
+      img {
+        max-width: 2.1 * $gutter;
+        margin-right: 0.4 * $gutter;
+      }
+    }
+
+    &-bar {
+      @include border-radius(4px);
+
+      height: $gutter;
+      position: relative;
+      background-color: $white;
+      float: left;
+      width: 80%;
+      margin-right: 0.75 * $gutter;
+      margin-bottom: 0.75 * $gutter;
+      overflow: hidden;
+
+      span {
+        @include border-radius(0);
+
+        width: 70%;
+        display: block;
+        height: 100%;
+        background-color: $report;
+        position: relative;
+      }
+    }
+
+    & > a i{
+      color: $xlight-black;
+      line-height: $gutter;
+      font-size: 1.25 * $font-base;
+      margin-top: 1px;
+
+      &:hover {
+        color: $white;
+      }
+    }
+  }
+
+  &-point {
+    display: block;
+    font-size: 1.125 * $font-base;
+    font-weight: $font-bold;
+    margin-bottom: 0.75 * $gutter;
+
+    i {
+      display: inline;
+      margin-right: 0.4 * $gutter;
+    }
+  }
+
+  &-note {
+    font-style: italic;
+    color: $report;
+    font-size: 0.9375 * $font-base;
+    color: $white;
+
+    .next-badge {
+      display: block;
+      color: $report;
+      padding-left: 0.4 * $gutter;
+    }
+  }
+
+  &-counter {
+    padding-top: 1.5 * $gutter;
+    padding-left: 2 * $gutter;
+
+    .item {
+      width: 6.4 * $gutter;
+      height: 4.1 * $gutter;
+      background-color: $video;
+      text-align: center;
+      float: left;
+      font-size: $font-base;
+      padding: 0.6 * $gutter;
+      margin-right: 0.5 * $gutter;
+      margin-bottom: 0.5 * $gutter;
+      display: inline-block;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+      span {
+        font-weight: $font-bold;
+        font-size: 1.5 * $font-base;
+      }
+    }
+  }
+
+  &-nav {
+    background-color: $xthin-light-black;
+
+    .nav {
+      li {
+        float: left;
+        border-top: 0 !important;
+
+        &.active a,
+        &:focus a {
+          border-bottom: 5px $blue solid !important;
+          background-color: $xxthin-light-black;
+        }
+
+        a {
+          height: 2.7 * $gutter;
+          line-height: 2.7 * $gutter;
+          padding: 0 (1.5 * $gutter) 0 (3 * $gutter);
+          color: $white;
+          font-weight: $font-bold;
+          font-size: 1.125 * $font-base;
+          border-right: 1px $xxthin-light-black solid;
+
+          i {
+            margin-left: 0.5 * $gutter;
+          }
+        }
+      }
+    }
+
+  }
+
+  //User detail
+  &-detail {
+    padding: (1.2 * $gutter) 0;
+
+    .tab-content {
+      border-top: 0;
+    }
+
+    /*User general*/
+    .general {
+      &-title {
+        color: $xthin-light-black;
+        font-size: 1.25 * $font-base;
+        text-transform: uppercase;
+        line-height: 1.3em;
+        border-bottom: 4px $gray solid;
+        margin-bottom: $gutter;
+        display: inline-block;
+        padding-bottom: 0.25 * $gutter;
+        font-weight: $font-bold;
+      }
+
+      &-item {
+        border: 1px $gray solid;
+        padding: (0.8 * $gutter) (1.2 * $gutter);
+        background-color: $light-gray;
+        font-size: $font-base;
+
+        p:last-child {
+          margin-bottom: 0;
+        }
+
+        b {
+          min-width: 4.2 * $gutter;
+          display: inline-block;
+        }
+      }
+
+    }
+
+  }
+}
+
+//For mobile
+@media screen and (max-width: $tablet - 1) {
+  .user {
+    &-info {
+      height: auto;
+      background-color: $xxxdark-gray;
+      background-image: none;
+    }
+  }
+}

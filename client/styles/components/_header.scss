@@ -1,0 +1,323 @@
+/**
+ * Header
+ */
+
+.header {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  height: $gutter * 3;
+  background-color: $xthin-light-black;
+
+  &.home {
+    background-color: rgba($xthin-light-black, 0.3);
+  }
+
+  &-content {
+    padding: ($gutter * 0.6) 0;
+  }
+
+  &-logo,
+  &-menu {
+    float: left;
+  }
+
+  &-logo {
+    img {
+      display: block;
+      height: $gutter * 1.8;
+      width: auto;
+    }
+  }
+
+  &-menu {
+    margin-left: $gutter * 1.5;
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    li {
+      display: inline-block;
+      margin: 0;
+    }
+
+    a {
+      display: block;
+      padding: 0 ($gutter * 0.4);
+      font-size: $font-base * 0.9375;
+      line-height: $gutter * 1.8;
+      text-decoration: none;
+      color: $dark-gray;
+
+      &:hover {
+        color: $white;
+      }
+    }
+  }
+
+  &-action,
+  &-user {
+    float: right;
+  }
+
+  &-action {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      position: relative;
+      display: inline-block;
+    }
+
+    a {
+      position: relative;
+      padding: 0 ($gutter * 0.4);
+      font-size: 1.4em;
+      text-decoration: none;
+      line-height: $gutter * 1.8;
+      color: $dark-gray;
+
+      &:hover {
+        color: $white;
+      }
+
+      span {
+        $size: $gutter * 0.8;
+
+        position: absolute;
+        top: -($gutter * 0.2);
+        right: $gutter * 0.4;
+        display: block;
+        height: $size;
+        width: $size;
+        font-size: $font-base * 0.625;
+        line-height: $size;
+        text-align: center;
+        background-color: $red;
+        border-radius: 50%;
+        color: $white;
+      }
+    }
+  }
+
+  &-user {
+    margin-left: ($gutter * 0.6);
+
+    &-info {
+      position: relative;
+      padding: ($gutter * 0.5) ($gutter * 0.5) ($gutter * 0.5) ($gutter * 3.5);
+      min-height: $gutter * 3.5;
+      background-color: $light-gray;
+
+      img {
+        @include border-radius(50%);
+        $img-size: $gutter * 2.5;
+
+        position: absolute;
+        top: $gutter * 0.5;
+        left: $gutter * 0.5;
+        display: block;
+        height: $img-size;
+        width: $img-size;
+      }
+    }
+
+    &-gamification {
+      color: $thin-light-black;
+
+      span {
+        margin-right: $gutter * 0.25;
+      }
+
+      i {
+        color: $dark-gray;
+      }
+    }
+
+    &-action {
+      padding: ($gutter * 0.5) $gutter;
+      border-top: 1px solid $thin-gray;
+
+      ul {
+        list-style: none;
+      }
+
+      ul,
+      li {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+      }
+
+      li {
+        a {
+          position: relative;
+          display: block;
+          padding: {
+            top: $gutter * 0.3;
+            bottom: $gutter * 0.3;
+            left: $gutter * 1.25;
+          }
+          overflow: hidden;
+          color: $thin-light-black;
+
+          &:hover {
+            color: $blue;
+          }
+        }
+      }
+    }
+
+    &-action a:hover &-number {
+      color: $blue;
+    }
+
+    &-number,
+    &-label {
+      display: block;
+      vertical-align: middle;
+    }
+
+    &-label {
+      float: left;
+      margin-left: $gutter * 0.25;
+    }
+
+    &-number {
+      float: right;
+      font: {
+        size: $font-base * 0.8125;
+        weight: 700;
+      }
+      color: $xlight-black;
+    }
+
+    &-icon {
+      position: absolute;
+      top: $gutter * 0.3;
+      left: 0;
+      font-size: 1.3em;
+    }
+
+    &-label {
+      margin-left: $gutter * 0.5;
+      font-weight: $font-medium;
+    }
+
+    &-logout {
+      display: block;
+      padding: ($gutter * 0.5) 0;
+      text-align: right;
+      font-weight: $font-bold;
+      text-decoration: none !important;
+      color: $blue;
+
+      &:hover {
+        color: $thin-light-black;
+      }
+    }
+  }
+
+  &-username {
+    display: block;
+    margin-top: $gutter * 0.15;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font: {
+      size: $font-base;
+      weight: $font-bold;
+    }
+    color: $thin-light-black;
+  }
+
+  &-search {
+    &-form {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 0;
+      overflow: hidden;
+      transition: width 0.3s ease-out;
+
+      form {
+        position: relative;
+      }
+
+      input {
+        @include border-radius(40px);
+
+        display: block;
+        padding: ($gutter * 0.3) ($gutter * 1.6) ($gutter * 0.3) ($gutter * 0.6);
+        height: $gutter * 1.6;
+        width: 100%;
+        background-color: $white;
+        border: 1px solid $thin-gray;
+      }
+
+      button {
+        $button-size: $gutter * 1.6;
+
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 0;
+        height: $button-size;
+        width: $button-size;
+        line-height: $button-size;
+        background: none;
+        border: 0;
+      }
+
+      &.active {
+        width: $gutter * 8;
+      }
+    }
+  }
+
+  &-action &-login {
+    padding: 0 $gutter;
+    color: $dark-gray;
+    font-size: $font-base * 0.9375;
+    line-height: $gutter * 1.7;
+
+    &:hover {
+      border-color: $white;
+    }
+  }
+
+  &-login {
+    @include border-radius(4px);
+
+    display: block;
+    height: $gutter * 1.8;
+    border: 1px solid $dark-gray;
+  }
+}
+
+/* tablet & mobile */
+@media screen and (max-width: ($desktop - 1)){
+  .header {
+    &-logo {
+      position: fixed;
+      top: ($gutter * 0.6);
+      left: 50%;
+      z-index: 3;
+      margin-left: -($gutter * 3.4);
+    }
+  }
+}
+
+/* tablet */
+@media screen and (min-width: $tablet) and (max-width: ($desktop - 1)){
+  .header {
+    &-action {
+      
+    }
+  }
+}

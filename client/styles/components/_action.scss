@@ -1,0 +1,147 @@
+/**
+ * Action
+ */
+
+.action {
+  font-weight: $font-medium;
+  background-color: $dark-blue;
+
+  &-text {
+    line-height: 1.143;
+    color: $xthin-gray;
+
+    span {
+      display: block;
+      padding: {
+        top: $gutter * 0.575;
+        left: 25%;
+      }
+    }
+
+    i {
+      display: block;
+      font-style: normal;
+    }
+  }
+
+  &-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      float: left;
+      margin: 0;
+      padding: 0;
+      width: 20%;
+    }
+
+    a {
+      display: block;
+      font-size: $font-base;
+      text: {
+        align: center;
+        decoration: none;
+      }
+
+      i,
+      span {
+        display: block;
+      }
+
+      span {
+        margin-top: $gutter * 0.4;
+        color: $white;
+      }
+
+      i {
+        position: relative;
+        top: 0;
+        font-size: 1.5em;
+        transition: top 0.25s ease-out;
+
+        &.green {
+          color: $report;
+        }
+        &.blue {
+          color: $link;
+        }
+        &.red {
+          color: $photo;
+        }
+        &.light-blue {
+          color: $video;
+        }
+        &.purple {
+          color: $audio;
+        }
+      }
+    }
+  }
+}
+
+/* xs */
+@media screen and (max-width: ($tablet - 1)) {
+  .action {
+    margin: {
+      left: -($gutter * 0.75);
+      right: -($gutter * 0.75);
+    }
+
+    &-text {
+      display: none;
+    }
+
+    &-list {
+      a {
+        $h: $gutter * 2.4;
+
+        height: $h;
+        line-height: $h;
+
+        span {
+          display: none;
+        }
+
+        i {
+          line-height: $h;
+        }
+
+        &:hover,
+        &.active {
+          background-color: rgba($black, 0.3);
+        }
+      }
+    }
+  }
+}
+
+/* sm & md & lg */
+@media screen and (min-width: $tablet) {
+  .action {
+    @include border-radius(4px);
+
+    padding: $gutter 0;
+
+    &-text,
+    &-list {
+      float: left;
+    }
+
+    &-text {
+      width: 25%;
+    }
+
+    &-list {
+      width: 75%;
+
+      a {
+        border-left: 1px solid $xxthin-gray;
+
+        &:hover i {
+          top: -($gutter * 0.25);
+        }
+      }
+    }
+  }
+}

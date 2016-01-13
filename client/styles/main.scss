@@ -1,0 +1,33 @@
+/**
+ * Main
+ */
+
+@import 'common/variables.scss';
+@import 'common/mixins.scss';
+@import 'common/common.scss';
+
+@import 'components/layout.scss';
+@import 'components/form.scss';
+@import 'components/button';
+@import 'components/select';
+@import 'components/social.scss';
+@import 'components/header.scss';
+@import 'components/footer.scss';
+@import 'components/register.scss';
+@import 'components/dropdown.scss';
+@import 'components/offcanvas.scss';
+@import 'components/settings';
+@import 'components/modal';
+@import 'components/nav';
+@import 'components/tab';
+@import 'components/highlight';
+@import 'components/slick';
+@import 'components/action';
+@import 'components/post';
+@import 'components/sidebar';
+@import 'components/recommend';
+@import 'components/channel';
+@import 'components/tag';
+@import 'components/profile';
+@import 'components/userprofile';
+@import 'components/follow';

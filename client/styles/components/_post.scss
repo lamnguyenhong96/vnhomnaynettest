@@ -1,0 +1,174 @@
+/**
+ * Post
+ */
+
+.post {
+  &-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &-item {
+    padding: ($gutter * 1.5) 0;
+    border-bottom: 1px solid $thin-gray;
+  }
+
+  &-image {
+    position: relative;
+
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
+  &-title {
+    margin: 0;
+    padding: 0;
+    font-weight: $font-bold;
+    line-height: 1.2;
+
+    a {
+      text-decoration: none;
+      color: $thin-light-black;
+
+      &:hover {
+        color: $blue;
+      }
+    }
+  }
+
+  &-recently {
+    margin: ($gutter * 0.25) 0;
+    font-size: $font-base * 0.8125;
+    color: $xlight-black;
+
+    a {
+      text-decoration: none;
+      color: $thin-light-black;
+
+      &:hover {
+        color: $blue;
+      }
+    }
+  }
+
+  &-summary {
+    max-height: $gutter * 5;
+    overflow: hidden;
+
+    p {
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  &-action {
+    margin-top: $gutter * 0.5;
+
+    &-vote {
+      float: left;
+      font-weight: $font-bold;
+      text-transform: uppercase;
+      color: $thin-light-black;
+
+      span {
+        color: $blue;
+      }
+
+      i {
+        font-size: 1.2em;
+      }
+    }
+
+    &-other {
+      float: right;
+    }
+
+    &-wrapper {
+      span {
+        &:first-child {
+          margin-left: 0;
+        }
+      }
+
+      i {
+        margin-right: $gutter * 0.15;
+        color: $xxxthin-gray;
+      }
+    }
+  }
+}
+
+/* xs */
+@media screen and (max-width: ($tablet - 1)) {
+  .post {
+    &-title {
+      margin-top: $gutter * 0.75;
+
+      &.large {
+        font-size: $font-base * 1.125;
+      }
+
+      &.medium {
+        font-size: $font-base;
+      }
+    }
+
+    &-action {
+      &-vote {
+        i {
+          margin-right: $gutter * 0.15;
+        }
+      }
+
+      &-wrapper {
+        span {          
+          margin-left: $gutter * 0.15;
+        }
+      }
+    }
+  }
+}
+
+/* sm & md & lg */
+@media screen and (min-width: $tablet) {
+  .post {
+    &-title {
+      &.large {
+        font-size: $font-base * 1.25;
+      }
+
+      &.medium {
+        font-size: 1.125 * $font-base;
+        max-height: 3.3 * $gutter;
+      }
+    }
+
+    &-action {
+      &-vote {
+        i {
+          margin-right: $gutter * 0.4;
+        }
+      }
+
+      &-wrapper {
+        span {          
+          margin-left: $gutter * 0.4;
+        }
+      }
+    }
+  }
+}
+
+/* md & lg */
+@media screen and (min-width: $desktop){
+  .post {
+    &-title {
+      max-height: $gutter * 3.65;
+      overflow: hidden;
+    }
+  }
+}

@@ -1,0 +1,64 @@
+/**
+ * Layout
+ */
+
+.container {
+  &-wrapper {
+    position: relative;
+    left: 0;
+    height: 100%;
+    /* perspective: 1000px; */
+    transition: transform 0.5s;
+
+    &:before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      height: 100%;
+      width: 100%;
+      background-color: rgba($white, 0.2);
+      content: " ";
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.25s ease-out;
+      z-index: 2;
+    }
+  }
+
+  &-inner {
+    position: relative;
+    background-color: $white;
+  }
+}
+
+.content {
+  position: relative;
+  overflow: hidden;
+  background-color: $xthin-light-black;
+}
+
+/* tablet & mobile */
+@media screen and (max-width: $desktop){
+  .toggle {
+    $size: $gutter * 1.8;
+
+    display: block;
+    float: left;
+    margin-left: -($gutter * 0.3);
+    height: $size;
+    width: $size;
+    font-size: 2em;
+    line-height: $size;
+    text-align: center;
+    color: $white;
+  }
+
+  .push-to-right {
+    transform: translate3d($gutter * 12, 0px, 0px);
+
+    &.container-wrapper:before {
+      opacity: 1;
+    }
+  }
+}

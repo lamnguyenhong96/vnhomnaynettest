@@ -1,0 +1,238 @@
+/**
+ * Highlight
+ */
+
+.highlight {
+  border: {
+    style: solid;
+    width: 2px 0 0 0;
+    color: $white;
+  }
+
+  &-item {
+    position: relative;
+    color: $white;
+    cursor: pointer;
+
+    img {
+      margin: 0 auto;
+    }
+
+    i {
+      font-style: normal;
+    }
+  }
+
+  &-item:hover &-wrapper:before {
+    background-color: transparent;
+  }
+
+  &-wrapper,
+  &-order,
+  &-info,
+  &-content,
+  &-avatar {
+    position: absolute;
+  }
+
+  &-order,
+  &-info,
+  &-content,
+  &-avatar {
+    z-index: 3;
+  }
+
+  &-wrapper {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    &:before,
+    &:after {
+      position: absolute;
+      left: 0;
+      display: block;
+      width: 100%;
+      content: "";
+    }
+
+    &:before {
+      top: 0;
+      z-index: 2;
+      height: 100%;
+      background-color: rgba($black, 0.4);
+      transition: background-color 0.25s ease-out;
+    }
+
+    &:after {
+      bottom: 0;
+      z-index: 1;
+      height: 50%;
+      background: -moz-linear-gradient(top,rgba($black,0) 0,rgba($black,.65) 100%);
+      background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,rgba($black,0)),color-stop(100%,rgba($black,.65)));
+      background: -webkit-linear-gradient(top,rgba($black,0) 0,rgba($black,.65) 100%);
+      background: -ms-linear-gradient(top,rgba($black,0) 0,rgba($black,.65) 100%);
+      background: linear-gradient(to bottom,rgba($black,0) 0,rgba($black,.65) 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#a6000000', GradientType=0);
+    }
+  }
+
+  &-order {
+    top: $gutter * 0.75;
+    overflow: hidden;
+
+    span {
+      float: left;
+      font-weight: $font-bold;
+      text-transform: uppercase;
+    }
+  }
+
+  &-number {
+    font-size: $font-base * 2.5;
+    line-height: 1;
+  }
+
+  &-vote {
+    position: relative;
+    margin-left: $gutter * 0.75;
+    padding-left: $gutter * 0.75;
+    font-size: $font-base;
+    line-height: 1.25;
+
+    &:before {
+      position: absolute;
+      top: $gutter * 0.25;
+      bottom: $gutter * 0.15;
+      left: 0;
+      display: block;
+      width: 1px;
+      background-color: $white;
+      content: "";
+    }
+
+    i {
+      display: block;
+    }
+  }
+
+  &-info {
+    top: $gutter * 0.75;
+
+    span {
+      display: block;
+      text-align: right;
+    }
+  }
+
+  &-channel {
+    font-weight: $font-bold;
+    text-transform: uppercase;
+  }
+
+  &-content {
+    bottom: $gutter;
+  }
+
+  &-title {
+    margin: 0;
+    padding: 0;
+    font: {
+      size: $font-base * 1.125;
+      weight: $font-medium;
+    }
+    line-height: 1.22;
+    text-shadow: 0 1px 1px $black;
+  }
+
+  &-action {
+    margin-top: $gutter * 0.5;
+
+    span {
+      display: inline-block;
+      margin-left: $gutter * 0.4;
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+
+    i {
+      margin-right: $gutter * 0.25;
+    }
+  }
+
+  &-avatar {
+    bottom: $gutter;
+
+    img {
+      @include border-radius(50%);
+
+      display: block;
+    }
+  }
+}
+
+/* mobile */
+@media screen and (max-width: ($tablet - 1)){
+  .highlight {
+    border: 0;
+
+    &-item {
+      border: 0;
+    }
+
+    &-order,
+    &-content {
+      left: $gutter * 0.75;
+    }
+
+    &-content,
+    &-info,
+    &-avatar {
+      right: $gutter * 0.75;
+    }
+
+    &-vote {
+      margin-left: $gutter * 0.5;
+      padding-left: $gutter * 0.5;
+    }
+
+    &-avatar {
+      img {
+        width: $gutter * 1.9;
+        height: auto;
+      }
+    }
+  }
+}
+
+/* tablet & desktop */
+@media screen and (min-width: $tablet){
+  .highlight {
+    &-item {
+      border: {
+        style: solid;
+        width: 0 1px;
+        color: $white;
+      }
+    }
+
+    &-order,
+    &-content {
+      left: $gutter;
+    }
+
+    &-content,
+    &-info,
+    &-avatar {
+      right: $gutter;
+    }
+
+    &-vote {
+      margin-left: $gutter * 0.75;
+      padding-left: $gutter * 0.75;
+    }
+  }
+}

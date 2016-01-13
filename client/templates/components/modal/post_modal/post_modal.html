@@ -1,0 +1,83 @@
+<template name="postModal">
+    <div class="modal modal-post fade" id="post" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-inner">
+                    <div class="row">
+                        <div class="col-md-3">
+
+                            <ul class="nav nav-tabs" id="tabContent">
+                                <li class="active">
+                                    <a href="#reporting" data-toggle="tab">
+                                        <i class="fa fa-font green"></i>
+                                        <span>{{i18n "reporting"}}</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#link" data-toggle="tab">
+                                        <i class="fa fa-link blue"></i>
+                                        <span>{{i18n "link"}}</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#photo" data-toggle="tab">
+                                        <i class="fa fa-picture-o red"></i>
+                                        <span>{{i18n "photo"}}</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#video" data-toggle="tab">
+                                        <i class="fa fa-play light-blue"></i>
+                                        <span>{{i18n "video"}}</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#audio" data-toggle="tab">
+                                        <i class="fa fa-headphones purple"></i>
+                                        <span>{{i18n "audio"}}</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <!-- tab -->
+
+                        </div>
+                        <div class="col-md-9">
+                            <div class="tab-content">
+
+                                <div class="tab-pane active" id="reporting">
+                                    {{> reporting}}
+                                </div>
+                                <!-- tab-pane -->
+
+                                <div class="tab-pane" id="link">
+                                    {{> link}}
+                                </div>
+                                <!-- tab-pane -->
+
+                                <div class="tab-pane" id="photo">
+                                    {{> photo}}
+                                </div>
+                                <!-- tab-pane -->
+
+                                <div class="tab-pane" id="video">
+                                    {{> video}}
+                                </div>
+                                <!-- tab-pane -->
+
+                                <div class="tab-pane" id="audio">
+                                    {{> audio}}
+                                </div>
+                                <!-- tab-pane -->
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="#" class="button button-only-icon button-small button-blue modal-close circle"
+                   data-dismiss="modal"><i class="fa fa-times"></i></a>
+            </div>
+        </div>
+    </div>
+    {{> cropperModal}}
+    <!--Cropper Modal-->
+</template>

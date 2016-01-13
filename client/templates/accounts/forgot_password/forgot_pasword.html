@@ -1,0 +1,17 @@
+<template name="ForgotPassword">
+    {{#if resetPassword}}
+    <form id="resetPasswordForm">
+        <input id="resetPasswordPassword" name="password" placeholder="New Password" type="password" >
+        <input id="resetPasswordPasswordConfirm" name="password-confirm" placeholder="Confirm" type="password" >
+        <input class="btn-submit" type="submit" value="Reset">
+    </form>
+    <!-- end #reset-password-form -->
+    {{else}}
+    <form id="forgotPasswordForm">
+      <input id="forgotPasswordEmail" type="text" name="email" placeholder="Email Address">
+      <input class="btn-submit" type="submit" value="Send">
+    </form>
+    <!-- end #forgot-password-form -->
+    {{/if}}
+
+</template>

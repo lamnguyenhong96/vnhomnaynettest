@@ -1,0 +1,400 @@
+/*
+* User profile
+*/
+
+.user {
+
+  /*--- User content ---*/
+  &-content {
+    background-color: $xthin-light-black;
+    color: $white;
+  }
+
+  //user info
+  &-info {
+    padding-top: 2.1 * $gutter;
+    padding-bottom: 2 * $gutter;
+    height: 16.7 * $gutter;
+    background: url('/img/bg-myprofile.png') center top no-repeat;
+  }
+
+  &-image {
+    position: relative;
+    margin-bottom: 0.75 * $gutter;
+    text-align: center;
+
+    img{
+      @include border-radius(50%);
+
+      border: 8px #fff solid;
+      max-width: 100%;
+    }
+
+    .index-number {
+      position: absolute;
+      bottom: -(0.4 * $gutter);
+      left: 50%;
+      width: 3.2 * $gutter;
+      height: 1.4 * $gutter;
+      line-height: 1.4 * $gutter;
+      margin-left: -(1.6 * $gutter);
+      text-align: center;
+      font-weight:  $font-bold;
+    }
+  }
+
+  &-title {
+    font-size: 1.625 * $font-base;
+    font-weight:  $font-bold;
+    display: block;
+    text-align: center;
+    margin-bottom: 0.5 * $gutter;
+  }
+
+  .form-social-content {
+    text-align: center;
+    margin-bottom: $gutter;
+  }
+
+  &-level {
+    &-wrap {
+      position: relative;
+    }
+
+    &-title {
+      font-weight: $font-bold;
+      font-size: 1.75 * $font-base;
+      line-height: 1.5 * $gutter;
+      margin-bottom: $gutter;
+
+      img {
+        max-width: 2.1 * $gutter;
+        margin-right: 0.4 * $gutter;
+      }
+    }
+
+    &-bar {
+      @include border-radius(4px);
+
+      height: $gutter;
+      position: relative;
+      background-color: $white;
+      width: 80%;
+      margin-right: 0.75 * $gutter;
+      margin-bottom: 0.75 * $gutter;
+      overflow: hidden;
+
+      span {
+        @include border-radius(0);
+
+        width: 70%;
+        display: block;
+        height: 100%;
+        background-color: $report;
+        position: relative;
+      }
+    }
+
+    a.pop-over {
+      position: absolute;
+      left: 83%;
+      top: 1px;
+
+      i{
+        color: $xlight-black;
+        line-height: $gutter;
+        font-size: 1.25 * $font-base;
+
+        &:hover {
+          color: $white;
+        }
+      }
+    }
+  }
+
+  &-point {
+    display: inline-block;
+    font-size: 1.125 * $font-base;
+    font-weight: $font-bold;
+    margin-bottom: 0.75 * $gutter;
+
+    i {
+      display: inline;
+      margin-right: 0.4 * $gutter;
+    }
+  }
+
+  &-note {
+    font-style: italic;
+    font-size: 0.9375 * $font-base;
+    color: $white;
+
+    .next-badge {
+      display: block;
+      color: $report;
+      padding-left: 0.4 * $gutter;
+    }
+  }
+
+  &-counter {
+    padding-top: 1.5 * $gutter;
+    text-align: center;
+
+    .item {
+      width: 6.3 * $gutter;
+      height: 4.1 * $gutter;
+      background-color: $video;
+      text-align: center;
+      font-size: $font-base;
+      padding: 0.6 * $gutter;
+      margin-right: 0.5 * $gutter;
+      float: left;
+
+      &:last-child {
+        margin-right: 0
+      }
+
+      span {
+        font-weight: $font-bold;
+        font-size: 1.5 * $font-base;
+      }
+    }
+  }
+
+  &-action {
+    padding-top: 0.75 * $gutter;
+    text-align: center;
+
+    .button {
+
+      margin-right: 0.75 * $gutter;
+    }
+  }
+
+  //User nav
+  &-nav {
+    background-color: $xthin-light-black;
+
+    .user-tabs{
+      & > li {
+        float: left;
+        border-top: 0 !important;
+        border-right: 1px $xdark-gray solid;
+
+        a {
+          height: 2.5 * $gutter;
+          line-height: 2.5 * $gutter;
+          padding: 0 (1.5 * $gutter);
+          color: $white;
+          font-size: $font-base;
+          border-bottom: 5px transparent solid !important;
+
+          i {
+            padding-right: 0.75 * $gutter;
+            font-size: 1.375 * $font-base;
+          }
+        }
+
+        &.active a,
+        & > a:focus,
+        & > a:hover {
+          border-color: $blue;
+          background-color: $xxthin-light-black !important;
+        }
+      }
+    }
+  }
+
+  /* --- User Detail ---*/
+  &-detail {
+    .tab-content {
+      border-top: 0;
+    }
+  }
+
+   //User general
+  &-general {
+    padding: (1.2 * $gutter) 0;
+    .title {
+      color: $xthin-light-black;
+      font-size: 1.25 * $font-base;
+      text-transform: uppercase;
+      line-height: 1.3em;
+      border-bottom: 4px $gray solid;
+      margin-bottom: $gutter;
+      display: inline-block;
+      padding-bottom: 0.25 * $gutter;
+      font-weight: $font-bold;
+    }
+
+    .item {
+      border: 1px $gray solid;
+      padding: (0.8 * $gutter) (1.2 * $gutter);
+      background-color: $light-gray;
+      font-size: $font-base;
+
+      p:last-child {
+        margin-bottom: 0;
+      }
+
+      b {
+        min-width: 4.2 * $gutter;
+        display: inline-block;
+      }
+    }
+  }
+
+  //User posts and follow
+  &-posts,
+  &-follow {
+    &-nav {
+      border-bottom: 1px $thin-gray solid;
+
+      .nav > li {
+        display: inline-block;
+        float: left;
+
+        a {
+          padding: (0.75 * $gutter) (0.5 * $gutter);
+        }
+
+        &.active a,
+        a:hover,
+        a:focus {
+          color: $blue;
+          font-weight: $font-bold;
+          background-color: transparent;
+        }
+      }
+    }
+
+    .tab-pane-2 {
+      display: none;
+
+      &.active {
+        display: block;
+      }
+    }
+  }
+
+  //User posts profile
+  &-posts {
+    // custom posts
+    .post {
+      &-item {
+        padding: $gutter 0;
+        border-bottom: none;
+      }
+
+      &-title {
+        margin-top: $gutter * 0.75;
+      }
+    }
+
+    //Custom select button dropdown
+    .select-custom {
+      float: right;
+      margin-top: 0.5 * $gutter;
+    }
+  }
+}
+
+//Responsive
+@media screen and (max-width: $large - 1) {
+  .user {
+    &-title,
+    &-level-title {
+      font-size: 1.25 * $font-base;
+    }
+  }
+}
+
+@media screen and (max-width: $large - 1) and (min-width: $desktop) {
+  .user {
+    .social-button {
+      margin: 0 0 (0.5 * $gutter) 0;
+    }
+  }
+
+}
+
+//For tablet
+@media screen and (max-width: $desktop - 1){
+  .user {
+    &-info {
+      height: auto;
+      background-color: $xdark-gray;
+      background-image: none;
+    }
+
+    &-general {
+      .title {
+        font-size: $font-base;
+      }
+
+      .item {
+        font-size: 0.875 * $font-base;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $desktop - 1) and (min-width: $tablet) {
+  .user {
+    &-detail {
+      .general-item b {
+        min-width: 0;
+      }
+    }
+  }
+}
+
+//For mobile
+@media screen and (max-width: $tablet - 1) {
+  .user {
+    &-info {
+      height: auto;
+      background-color: $xxxdark-gray;
+      background-image: none;
+    }
+
+    &-counter {
+      .item {
+        margin-bottom: 0.5 * $gutter;
+      }
+    }
+
+    &-general {
+      .item {
+        margin-bottom: 1.5 * $gutter;
+      }
+    }
+
+    &-nav {
+      .user-tabs li a {
+        padding: 0 (1.3 * $gutter);
+
+        span {
+          display: none;
+        }
+
+        i {
+          padding-right: 0;
+        }
+      }
+    }
+    &-posts,
+    &-follow {
+      .nav > li a {
+        padding: (0.75 * $gutter) (0.35 * $gutter);
+        font-size: 0.8125 * $font-base;
+      }
+
+    }
+
+    .select-custom {
+      margin-bottom: 0.4 * $gutter;
+      font-size: 0.8125 * $gutter;
+    }
+  }
+}

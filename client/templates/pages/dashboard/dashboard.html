@@ -1,0 +1,26 @@
+<template name="dashboard">
+  {{#Animate}}
+    <div class="main animate">
+      {{> highlight}}
+      <div class="main-inner">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-8">
+              <div class="main-content">
+                {{> dashboardAction}}
+                {{> dashboardPost}}
+              </div>
+            </div>
+            <div class="col-md-4 bg-gray visible-md visible-lg">
+              <div class="main-sidebar">
+                {{> sidebar_recommended}}
+                {{> sidebar_channel}}
+                {{> sidebar_tags}}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  {{/Animate}}
+</template>

@@ -1,0 +1,15 @@
+<template name="postsView">
+
+    {{> componentList
+    cursor=postsListCursor
+    subscription="postsList"
+    template="postsList"}}
+
+    <select class="" id="sortType">
+        {{#each options}}
+            <option value="{{type}}">{{name}}</option>
+        {{/each}}
+    </select>
+</template>
+
+

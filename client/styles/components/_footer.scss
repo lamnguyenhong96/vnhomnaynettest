@@ -1,0 +1,76 @@
+/**
+ * Footer
+ */
+
+.footer {
+  padding: ($gutter * 0.75) 0;
+  background-color: $xthin-light-black;
+  border-top: 1px solid $xxlight-black;
+  color: $white;
+
+  &-copyright {
+    p {
+      margin: 0;
+      padding: 0;
+    }
+
+    a {
+      font-weight: $font-bold;
+      color: $white;
+    }
+
+    span {
+      color: $blue;
+    }
+  }
+
+  .back-to-top {
+    @include border-radius(4px);
+    $size: $gutter * 1.8;
+
+    position: fixed;
+    right: $gutter * 0.75;
+    bottom: $gutter * 0.75;
+    z-index: 999;
+    display: block;
+    height: $size;
+    width: $size;
+    font-size: 1.7em;
+    line-height: $size;
+    text-align: center;
+    background-color: rgba($black, 0.5);
+    color: $white;
+
+    &:hover {
+      background-color: $light-black;
+    }
+  }
+}
+
+/* xs */
+@media screen and (max-width: ($tablet - 1)) {
+  .footer {
+    &-social,
+    &-copyright {
+      text-align: center;
+    }
+
+    &-copyright {
+      margin-top: $gutter * 0.5;
+    }
+  }
+}
+
+/* sm & md & lg */
+@media screen and (min-width: $tablet) {
+  .footer {
+    &-social {
+      float: right;
+    }
+
+    &-copyright {
+      font-size: $font-base * 0.9375;
+      line-height: $gutter * 1.8;
+    }
+  }
+}

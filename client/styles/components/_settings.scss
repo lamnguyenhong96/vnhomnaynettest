@@ -1,0 +1,146 @@
+/**
+ * Settings
+ */
+
+.setting {
+  //List item on side bar
+  &-list {
+    @include border-radius(4px);
+    border: 1px $xxdark-gray solid;
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+
+      & > li {
+        a {
+          display: block;
+          line-height: 2.2 * $gutter;
+          padding: 0 (0.6 * $gutter);
+          border-bottom: 1px $xxdark-gray solid;
+          color: $xlight-black;
+
+          i {
+            margin-right: 0.5 * $gutter;
+          }
+        }
+
+        &:last-child a {
+          border-bottom: none;
+        }
+
+        &:hover a,
+        &.active a {
+          font-weight: $font-bold;
+          background-color: $light-gray;
+          text-decoration: none;
+          color: $light-black;
+        }
+      }
+    }
+  }
+
+  //Profile Detail
+  &-profile {
+    h1.title {
+      font-size: 1.375 * $font-base;
+      color: $thin-light-black;
+      margin: 0;
+      padding: (0.8 * $gutter) (1.5 * $gutter);
+      border-bottom: 1px $xxdark-gray solid;
+    }
+
+    label {
+      padding-top: 0.3 * $gutter;
+      color: $thin-light-black;
+    }
+
+    .form {
+      &-input {
+        margin-top: 0;
+        height: 1.7 * $gutter;
+      }
+
+      &-input,
+      &-textarea,
+      &-select {
+        background-color: $light-gray;
+      }
+    }
+
+    .profile {
+      &-awatar {
+        label {
+          padding-top: 1.35 * $gutter;
+        }
+
+        img {
+          @include border-radius(50%);
+          float: left;
+          margin-right: 0.6 * $gutter;
+        }
+
+        input {
+          display: none;
+          visibility: hidden;
+        }
+        .button {
+          margin-top: 1.1 * $gutter;
+        }
+      }
+
+      &-form {
+        @include border-radius(4px);
+        border: 1px $xxdark-gray solid;
+
+        &-wrap {
+          border-bottom: 1px $xxdark-gray solid;
+          padding: (0.6 * $gutter) (1.1 * $gutter) (0.6 * $gutter) (1.5 * $gutter);
+        }
+
+        .no-border {
+          border-bottom: none;
+        }
+
+        .form-select {
+          width: 30%;
+          float: left;
+          height: 1.7 * $gutter;
+          display: inline-block;
+        }
+
+        .form-phone {
+          width: 67%;
+          display: inline-block;
+          float: right;
+        }
+      }
+    }
+  }
+
+  &-action {
+    margin-top: 1.5 * $gutter;
+
+    label {
+      display: block;
+    }
+  }
+}
+
+//Change password
+.margin-top {
+  margin-top: 1.7 * $gutter;
+}
+
+
+//Responsive for mobile
+@media screen and (max-width: $tablet - 1) {
+  .setting-list {
+    margin-bottom: 1.7 * $gutter;
+  }
+
+  .setting-profile .profile-form-wrap {
+    padding: (0.6 * $gutter) (1.1 * $gutter) (0.6 * $gutter) (1.1 * $gutter);
+  }
+}

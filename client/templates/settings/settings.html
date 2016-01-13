@@ -1,0 +1,23 @@
+<!--Settings-->
+
+<template name="settings">
+    <div class="main padding-top">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-3 col-md-offset-1 col-sm-4">
+                    <div class="setting-list">
+                        <ul>
+                            <li class="{{activeSettings '/settings'}}"><a href="/settings"><i class="fa fa-user"></i>Profile Details</a> </li>
+                            <li><a href="#"><i class="fa fa-star"></i>Skill</a> </li>
+                            <li class="{{activeSettings '/settings/change-password'}}"><a href="/settings/change-password"><i class="fa fa-lock"></i>Change Password</a> </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-7 col-sm-8">
+                        {{> yield region="detailrender"}}
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

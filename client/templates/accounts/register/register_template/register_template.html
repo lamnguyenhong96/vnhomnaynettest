@@ -1,0 +1,43 @@
+<template name="registerTemplate">
+  <div class="row">
+      <div class="col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+          <form class="register-form">
+              <div class="form-row">
+                  <label class="sr-only">Full Name</label>
+                  <input type="text" name="fullname" class="form-input has-icon" id="fullname" placeholder="Full name" required>
+                  <i class="form-icon fa fa-user"></i>
+              </div>
+              <div class="form-row">
+                  <label class="sr-only">Email</label>
+                  <input type="email" name="email" class="form-input has-icon" id="email" placeholder="Email" required>
+                  <i class="form-icon fa fa-envelope"></i>
+              </div>
+              <div class="form-row">
+                  <label class="sr-only">Password</label>
+                  <input type="password" name="password" class="form-input has-icon" id="password" placeholder="Password" required>
+                  <i class="form-icon fa fa-lock"></i>
+              </div>
+              <div class="form-extend">
+                  <label class="form-label-custom" for="termsOfServices">
+                    <input type="checkbox" name="termsOfServices" required>
+                    I have read and agree to the <a href="#">Terms of Services.</a>
+                  </label>
+              </div>
+              <div class="form-submit">
+                  <button type="submit" class="form-button">{{i18n "form.register_label"}}</button>
+              </div>
+              <div class="form-social">
+                <div class="form-social-header">
+                  <span>{{i18n "form.login_social"}}</span>
+                </div>
+                <div class="form-social-content">
+                  <a href="#" class="social-button gray facebook"><i class="fa fa-facebook"></i></a>
+                  <a href="#" class="social-button gray linkedin"><i class="fa fa-linkedin"></i></a>
+                  <a href="#" class="social-button gray twitter"><i class="fa fa-twitter"></i></a>
+                  <a href="#" class="social-button gray google"><i class="fa fa-google-plus"></i></a>
+                </div>
+              </div>
+          </form>
+      </div>
+  </div>
+</template>

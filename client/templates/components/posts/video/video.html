@@ -1,0 +1,123 @@
+<template name="video">
+    <div class="tab-form">
+        <form class="form-custom">
+            <div class="form-custom-group">
+                <input type="text" class="form-custom-input large" name="title" placeholder="{{i18n 'title'}}">
+            </div>
+            <div class="form-custom-group upload-thumbnail">
+                <div class="form-custom-column">
+                    <a href="#" class="form-custom-thumbnail upload">{{i18n "upload_thumnail"}}</a>
+                    <input type="file" name="thumbnailUpload" class="hidden" accept="image/*">
+                </div>
+                <div class="form-custom-column">
+                    <a href="#" class="form-custom-thumbnail link">{{i18n "upload_thumnail_link"}}</a>
+                </div>
+                <div class="form-custom-url">
+                    <input type="text" class="form-custom-input small" name="link" placeholder="{{i18n 'paste_url'}}">
+                    <a href="#" class="button button-only-icon button-small button-red circle"><i
+                            class="fa fa-times"></i></a>
+                </div>
+            </div>
+            <div class="thumbPreviewer"></div>
+            <!-- Thumb Previewer -->
+            <div class="form-custom-group">
+                <textarea rows="2" class="form-custom-textarea medium" name="summary"
+                          placeholder="{{i18n 'summary'}}"></textarea>
+            </div>
+
+            <div class="mediaPreview"></div>
+            <!--Media Previewer-->
+
+            <div class="form-custom-group upload-media">
+                <div class="form-custom-column">
+                    <div class="form-custom-media video form-custom-media--upload">
+                        <a href="#"
+                           class="button button-only-text button-large button-gray rounded mediaUpload">{{i18n "upload_video"}}</a>
+                        <input type="file" name="mediaUpload" class="hidden" accept="video/*">
+                    </div>
+                </div>
+                <div class="form-custom-column">
+                    <div class="form-custom-media form-custom-media--link">
+                        <a href="#"
+                           class="button button-only-text button-large button-gray rounded link">{{i18n "upload_video_link"}}</a>
+                    </div>
+                </div>
+                <div class="form-custom-url">
+                    <input type="text" class="form-custom-input small" name="mediaLink"
+                           placeholder="{{i18n 'paste_url'}}">
+                    <a href="#" class="button button-only-icon button-small button-red circle"><i
+                            class="fa fa-times"></i></a>
+                </div>
+            </div>
+
+
+            <div class="form-custom-group">
+                <select class="select-tag" multiple="multiple">
+                    <option value="tag1">tag1</option>
+                    <option value="tag2">tag2</option>
+                    <option value="tag3">tag3</option>
+                </select>
+            </div>
+            <div class="form-custom-group form-custom-action">
+                <div class="row">
+                    <div class="col-sm-6">
+
+                        <div class="select-custom gray rounded">
+                            <div class="select-custom-wrapper">
+                                <div class="select-custom-header channel"><span></span></div>
+                                <div class="select-custom-body">
+                                    <ul>
+                                        {{#each getChannels}}
+                                            {{#if $eq @index 0}}
+                                                <li><a href="#" class="active">{{name}}</a></li>
+                                            {{else}}
+                                                <li><a href="#">{{name}}</a></li>
+                                            {{/if}}
+                                        {{/each}}
+                                    </ul>
+                                </div>
+                                <select>
+                                    {{#each getChannels}}
+                                        {{#if $eq @index 0}}
+                                            <option value="{{name}}" selected="selected">{{name}}</option>
+                                        {{else}}
+                                            <option value="{{name}}">{{name}}</option>
+                                        {{/if}}
+                                    {{/each}}
+                                </select>
+                            </div>
+                        </div>
+                        <!-- select-custom -->
+
+                        <div class="select-custom gray rounded">
+                            <div class="select-custom-wrapper">
+                                <div class="select-custom-header">
+                                    <i class="fa fa-globe"></i>
+                                    <span>Public</span>
+                                </div>
+                                <div class="select-custom-body">
+                                    <ul>
+                                        <li><a href="#" class="active">Public</a></li>
+                                        <li><a href="#">Private</a></li>
+                                    </ul>
+                                </div>
+                                <select>
+                                    <option value="Public" selected="selected">Channel 1</option>
+                                    <option value="Private">Channel 2</option>
+                                </select>
+                            </div>
+                        </div>
+                        <!-- select-custom -->
+
+                    </div>
+                    <div class="col-sm-6">
+                        <button type="submit"
+                                class="button button-only-text button-normal button-blue rounded form-custom-submit button-submit">{{i18n "post_article"}}</button>
+                        <a href="#"
+                           class="button button-only-text button-normal button-gray rounded button-submit">{{i18n "save_as_draft"}}</a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</template>

@@ -1,0 +1,17 @@
+/**
+ * Register
+ */
+
+.register {
+  margin-top: -($gutter * 3);
+  padding-top: $gutter * 3;
+  min-height: 670px;
+  background: $xthin-light-black url('img/bg-signup.jpg') center top no-repeat;
+
+  .form {
+    &-extend,
+    &-social-header span {
+      color: $white;
+    }
+  }
+}

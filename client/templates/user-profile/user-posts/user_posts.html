@@ -1,0 +1,60 @@
+<!--User posts-->
+
+<template name="userPosts">
+    <div class="user-posts">
+        <div class="user-posts-nav">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-sm-8 pull-left">
+                        <ul class="nav" id="tabContent">
+                            <li class="active"><a href="#Reportings" data-toggle="tab">Reportings</a></li>
+                            <li><a href="#Photos" data-toggle="tab">Photos</a></li>
+                            <li><a href="#Links" data-toggle="tab">Links</a></li>
+                            <li><a href="#Videos" data-toggle="tab">Videos</a></li>
+                            <li><a href="#Audios" data-toggle="tab">Audios</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4 col-sm-4 pull-right">
+                        <div class="select-custom gray">
+                            <div class="select-custom-wrapper">
+                                <div class="select-custom-header">
+                                    <span>Theo thời gian</span>
+                                </div>
+                                <div class="select-custom-body">
+                                    <ul>
+                                        <li><a href="#" class="active">Theo thời gian</a></li>
+                                        <li><a href="#">Theo lượt xem</a></li>
+                                    </ul>
+                                </div>
+                                <select>
+                                    <option value="Theo thời gian" selected="selected">Theo thời gian</option>
+                                    <option value="Theo lượt xem">Theo lượt xem</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-content">
+            <div class="container">
+                <div class="tab-pane-2 active" id="Reportings">
+                    {{> userPostsReportings}}
+                </div>
+
+                <div class="tab-pane-2" id="Photos">
+                    {{> userPostsPhotos}}
+                </div>
+                <div class="tab-pane-2" id="Links">
+                    {{> userPostsLinks}}
+                </div>
+                <div class="tab-pane-2" id="Videos">
+                    {{> userPostsVideos}}
+                </div>
+                <div class="tab-pane-2" id="Audios">
+                    {{> userPostsAudios}}
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

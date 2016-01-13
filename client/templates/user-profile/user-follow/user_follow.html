@@ -1,0 +1,24 @@
+<!--User Follow-->
+
+<template name="userFollow">
+    <div class="user-follow">
+        <div class="user-follow-nav">
+            <div class="container">
+                <ul class="nav" id="tabContent">
+                    <li class="active"><a href="#Readerships" data-toggle="tab">Readerships</a></li>
+                    <li><a href="#Followings" data-toggle="tab">Followings</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="tab-content">
+            <div class="container">
+                <div class="tab-pane-2 active" id="Readerships">
+                    {{> userFollowReaderships}}
+                </div>
+                <div class="tab-pane-2" id="Followings">
+                    {{> userFollowFollowings}}
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

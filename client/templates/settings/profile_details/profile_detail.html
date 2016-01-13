@@ -1,0 +1,110 @@
+<template name="profileDetails">
+    <form class="setting-profile">
+    {{#with currentUser}}
+    {{#with profile}}
+        <div class="profile-form">
+        <h1 class="title">Profile Details</h1>
+            <div class="profile-form-wrap profile-awatar">
+                <div class="row">
+                    <div class="col-md-3 col-sm-3">
+                        <label>Awatar</label>
+                    </div>
+                    <div class="col-md-9 col-sm-9">
+                        {{#if currentUser.profile.pictureUrl}}
+                            <img src="{{currentUser.profile.pictureUrl}}" alt="">
+                        {{else}}
+                            <img src="http://placehold.it/76x76" alt="">
+                        {{/if}}
+                        <input id="myAwatar" name="pictureUrl" type="file">
+                        <button class="button button-only-text button-normal button-gray rounded" type="button" onclick="$('#myAwatar').trigger('click');">Change Awatar</button>
+                    </div>
+                </div>
+            </div>
+            <div class="profile-form-wrap">
+                <div class="row">
+                    <div class="col-md-3 col-sm-3">
+                        <label>Full Name</label>
+                    </div>
+                    <div class="col-md-9 col-sm-9">
+                        <input type="text" name="fullname" class="form-input" placeholder="Full Name" value="{{name}}" required>
+                    </div>
+                </div>
+            </div>
+            <div class="profile-form-wrap">
+                <div class="row">
+                    <div class="col-md-3 col-sm-3">
+                        <label>About you</label>
+                    </div>
+                    <div class="col-md-9 col-sm-9">
+                         <textarea class="form-textarea" rows="3" name="aboutyou">{{aboutyou}}</textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="profile-form-wrap">
+                <div class="row">
+                    <div class="col-md-3 col-sm-3">
+                        <label>Company</label>
+                    </div>
+                    <div class="col-md-9 col-sm-9">
+                        <input type="text" name="company" class="form-input" placeholder="Company" value="{{company}}">
+                    </div>
+                </div>
+            </div>
+            <div class="profile-form-wrap">
+                <div class="row">
+                    <div class="col-md-3 col-sm-3">
+                        <label>Address</label>
+                    </div>
+                    <div class="col-md-9 col-sm-9">
+                        <input type="text" name="address" class="form-input" placeholder="Address" value="{{address}}">
+                    </div>
+                </div>
+            </div>
+            <div class="profile-form-wrap">
+                <div class="row">
+                    <div class="col-md-3 col-sm-3">
+                        <label>Phone</label>
+                    </div>
+                    <div class="col-md-9 col-sm-9">
+                        <select class="form-select">
+                            <option value="volvo">Việt Nam</option>
+                            <option value="saab">USA</option>
+                            <option value="mercedes">China</option>
+                            <option value="audi">Laos</option>
+                        </select>
+                        <input type="tel" name="phone" class="form-input form-phone" value="{{phone}}" placeholder="Phone Number">
+                    </div>
+                </div>
+            </div>
+            <div class="profile-form-wrap">
+                <div class="row">
+                    <div class="col-md-3 col-sm-3">
+                        <label>Website</label>
+                    </div>
+                    <div class="col-md-9 col-sm-9">
+                        <input type="text" name="website" class="form-input" placeholder="Website" value="{{website}}">
+                    </div>
+                </div>
+            </div>
+            <div class="profile-form-wrap no-border">
+                <div class="row">
+                    <div class="col-md-3 col-sm-3">
+                        <label>Skype</label>
+                    </div>
+                    <div class="col-md-9 col-sm-9">
+                        <input type="text" name="skype" class="form-input" placeholder="Skype" value="{{skype}}">
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div class="setting-action">
+        <!--<button class="button gray margin-right">Cancel</button>-->
+        <button class="button button-only-text button-normal button-blue rounded" name="submit" type="submit">Save Settings</button>
+        {{#if submitted}}
+            {{#if errorMessage}}<p class="error-message">{{errorMessage}}</p>{{/if}}
+        {{/if}}
+    </div>
+    {{/with}}
+    {{/with}}
+    </form>
+</template>

@@ -1,0 +1,92 @@
+/**
+ * Social
+ */
+
+.social {
+  &-button {
+    $button-size: $gutter * 1.8;
+    @include border-radius(4px);
+
+    display: inline-block;
+    margin: 0 ($gutter * 0.15);
+    height: $button-size;
+    width: $button-size;
+    font-size: 1.3em;
+    line-height: $button-size;
+    text-align: center;
+
+    &.gray {
+      background-color: $gray;
+      color: $xlight-black;
+
+      &:hover {
+        color: $white;
+      }
+
+      &.facebook:hover {
+        background-color: $fb;
+      }
+
+      &.linkedin:hover {
+        background-color: $ln;
+      }
+
+      &.twitter:hover {
+        background-color: $tw;
+      }
+
+      &.google:hover {
+        background-color: $gg;
+      }
+    }
+
+    &.black {
+      background-color: $xthin-light-black;
+      color: $xlight-black;
+
+      &:hover {
+        background-color: $white;
+      }
+
+      &.facebook {
+        color: $fb;
+      }
+
+      &.linkedin {
+        color: $ln;
+      }
+
+      &.twitter{
+        color: $tw;
+      }
+
+      &.google {
+        color: $gg;
+      }
+    }
+
+    &.original {
+      color: $white;
+
+      &.facebook {
+        background-color: $fb;
+      }
+
+      &.linkedin {
+        background-color: $ln;
+      }
+
+      &.twitter {
+        background-color: $tw;
+      }
+
+      &.google {
+        background-color: $gg;
+      }
+
+      &:hover {
+        background-color: $light-black;
+      }
+    }
+  }
+}

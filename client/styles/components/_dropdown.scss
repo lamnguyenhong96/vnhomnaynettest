@@ -1,0 +1,94 @@
+/**
+ * Dropdown
+ */
+
+.dropdown {
+  position: relative;
+
+  &-header {
+    position: relative;
+    padding: {
+      top: 0;
+      bottom: 0;
+      left: $gutter * 2.2;
+      right: $gutter * 1.25;
+    }
+    height: $gutter * 1.8;
+    max-width: $gutter * 7.5;
+    cursor: pointer;
+    overflow: hidden;
+
+    &:after {
+      @include border-radius(50%);
+      $arrow-size: $gutter * 0.8;
+
+      position: absolute;
+      top: 50%;
+      right: 0;
+      display: block;
+      margin-top: -($arrow-size / 2);
+      height: $arrow-size;
+      width: $arrow-size;
+      font-family: 'FontAwesome';
+      line-height: $arrow-size;
+      text-align: center;
+      background-color: $xdark-gray;
+      color: $white;
+      content: "\f0d7";
+    }
+
+    img {
+      @include border-radius(50%);
+      $img-size: $gutter * 1.8;
+
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: $img-size;
+      width: $img-size;
+    }
+
+    span {
+      display: block;
+      font-size: $font-base * 0.875;
+      line-height: $gutter * 1.8;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      transition: color 0.25s ease-out;
+    }
+
+    &:hover {
+      span {
+        color: $white;
+      }
+    }
+  }
+
+  &-body {
+    position: absolute;
+    top: $gutter * 2.4;
+    right: 0;
+    max-height: 0;
+    width: $gutter * 13.5;
+    overflow: hidden;
+    background-color: $white;
+    transition: max-height 0.3s ease-out;
+  }
+
+  &-wrapper {
+    border: 1px solid $thin-gray;
+  }
+
+  &.active &-header:after {
+    content: "\f0d8";
+  }
+
+  &.active &-header span {
+    color: $white;
+  }
+
+  &.active &-body {
+    max-height: $gutter * 25;
+  }
+}

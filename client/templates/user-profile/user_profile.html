@@ -1,0 +1,105 @@
+<!--User profile -->
+
+<template name="userProfile">
+    <div class="main padding-top">
+        <div class="user">
+            <div class="user-content">
+                <div class="user-info">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-2 col-sm-4">
+                                <div class="user-image">
+                                    {{#if currentUser.profile.pictureUrl}}
+                                        <img src="{{currentUser.profile.pictureUrl}}" alt="">
+                                    {{else}}
+                                        <img src="http://placehold.it/155x155" alt="">
+                                    {{/if}}
+                                    <div class="button button-white-2 rounded index-number">#123</div>
+
+                                </div>
+                                <span class="user-title">Adam Lavine</span>
+                                <div class="form-social-content">
+                                    <a href="#" class="social-button black facebook"><i class="fa fa-facebook"></i></a>
+                                    <a href="#" class="social-button black twitter"><i class="fa fa-twitter"></i></a>
+                                    <a href="#" class="social-button black google"><i class="fa fa-google-plus"></i></a>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-8">
+                                <div class="user-level">
+                                    <div class="user-level-title">
+                                        <img src="/img/user-level.png" alt="">
+                                        <span>Ngôi sao vàng</span>
+                                    </div>
+                                    <div class="user-level-wrap">
+                                        <div class="user-level-bar">
+                                            <span></span>
+                                        </div>
+                                        <a class="pop-over" href="#" data-toggle="tooltip" data-placement="bottom" title="Hooray!"><i class="fa fa-info-circle"></i></a>
+                                    </div>
+                                    <div class="user-point">
+                                        <i class="fa fa-flask"></i>Point : 4329
+                                    </div>
+                                    <p class="user-note">
+                                        * Còn <b>171 Point</b> nữa sẽ đạt danh hiệu
+                                        <b class="next-badge">Nhiều độc giả nhất</b>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-md-5 col-sm-12 col-md-offset-1">
+                                <div class="user-counter clearfix">
+                                    <div class="item post">
+                                        <span>1992</span>
+                                        <p>Posts</p>
+                                    </div>
+                                    <div class="item readerships">
+                                        <span>1891</span>
+                                        <p>Readerships</p>
+                                    </div>
+                                    <div class="item followings">
+                                        <span>320</span>
+                                        <p>Followings</p>
+                                    </div>
+                                </div>
+                                <div class="user-action clearfix">
+                                    <button class="button button-has-icon button-normal button-black rounded" name="submit" type="submit"><i class="fa fa-check-square-o"></i> Follow</button>
+                                    <button class="button button-has-icon button-normal button-black rounded" name="submit" type="submit"><i class="fa fa-commenting-o"></i> Message</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--User info-->
+
+                <div class="user-nav">
+                    <div class="container">
+                        <ul class="nav user-tabs" id="tabContent">
+                            <li class="active"><a href="#General" data-toggle="tab"><i class="fa fa-user"></i><span>General</span></a></li>
+                            <li><a href="#Badge" data-toggle="tab"><i class="fa fa-certificate"></i><span>Badge</span></a></li>
+                            <li><a href="#Posts" data-toggle="tab"><i class="fa fa-file-text-o"></i><span>Posts</span></a></li>
+                            <li><a href="#Follow" data-toggle="tab"><i class="fa fa-heart"></i><span>Follow</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!--User nav-->
+
+            </div>
+            <div class="user-detail">
+                <div class="tab-content">
+                    <div class="tab-pane active" id="General">
+                        {{> userGeneral}}
+                    </div>
+
+                    <div class="tab-pane" id="Badge">
+                        {{> userBadge}}
+                    </div>
+                    <div class="tab-pane" id="Posts">
+                        {{> userPosts}}
+                    </div>
+                    <div class="tab-pane" id="Follow">
+                        {{> userFollow}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

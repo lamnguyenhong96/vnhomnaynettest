@@ -1,0 +1,79 @@
+<template name="offcanvas">
+  <div class="offcanvas visible-sm visible-xs">
+    <div class="offcanvas-container">
+      <div class="offcanvas-header">
+        <a href="#" class="offcanvas-close"><i class="fa fa-times"></i></a>
+      </div>
+      <div class="offcanvas-body">
+        <nav class="offcanvas-list">
+          <ul>
+            {{#if currentUser}}
+            <li>
+              <a href="#">
+                <i class="fa fa-tachometer"></i>
+                <span>{{i18n "menu_dashboard"}}</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fa fa-tachometer"></i>
+                <span>{{i18n "menu_newboard"}}</span>
+              </a>
+            </li>
+            {{/if}}
+            <li>
+              <a href="#">
+                <i class="fa fa-tachometer"></i>
+                <span>{{i18n "menu_explore"}}</span>
+              </a>
+            </li>
+            {{#if currentUser}}
+            <li>
+              <a href="#">
+                <i class="fa fa-tachometer"></i>
+                <span>{{i18n "menu_leaderboard"}}</span>
+              </a>
+            </li>
+            {{/if}}
+          </ul>
+        </nav>
+        <!-- offcanvas list -->
+
+        {{#if currentUser}}
+        <div class="offcanvas-user">
+          <div class="offcanvas-user-header">
+            {{#if currentUser.profile.pictureUrl}}
+              <img src="{{currentUser.profile.pictureUrl}}" alt="">
+            {{else}}
+              <img src="http://placehold.it/24x24" alt="">
+            {{/if}}
+            <span>{{currentUser.profile.name}}</span>
+          </div>
+          <div class="offcanvas-user-body">
+            <ul>
+              <li><a href="#">{{i18n "header_my_profile"}}</a></li>
+              <li><a href="#">{{i18n "header_my_post"}}</a></li>
+              <li><a href="#">{{i18n "header_followings"}}</a></li>
+              <li><a href="#">{{i18n "header_readerships"}}</a></li>
+              <li><a href="#">{{i18n "header_activities"}}</a></li>
+              <li><a href="#">{{i18n "header_invite"}}</a></li>
+              <li><a href="#">{{i18n "header_badge"}}</a></li>
+              <li><a href="#">{{i18n "header_setting"}}</a></li>
+              <li><a href="#">{{i18n "header_help"}}</a></li>
+            </ul>
+          </div>
+        </div>
+        <!-- offcanvas user -->
+
+        <div class="offcanvas-logout">
+          <a href="#" class="offcanvas-logout-button">
+            <i class="fa fa-sign-out"></i>
+            <span>{{i18n "logout"}}</span>
+          </a>
+        </div>
+        <!-- offcanvas logout -->
+        {{/if}}
+      </div>
+    </div>
+  </div>
+</template>
